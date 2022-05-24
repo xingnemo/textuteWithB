@@ -16,8 +16,6 @@ end
 data = mask.*double(depth);
 
 if showFigure==1
-    figure,imshow(depth,[]);title('depth');
-    figure,imshow(mask),title('mask');
     figure,imshow(data);title('rand-depth');
 end
 
