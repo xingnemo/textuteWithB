@@ -2,11 +2,14 @@ close all;
 clc;
 clear;
 
-path = './data/';
+path = './data/';   
 name = '00001';
 [depth,image]=read_h5(path,name);
-edge = edge_handle(depth,image);
-figure;imshow(edge,[]);title('edge');
+% res_RGF = RollingGuidanceFilter(result, 3, 0.05, 10);
+[imageEdge,depthEdge,edge] = handle_edge(depth,image,1);
+data1 = imageEdge&depthEdge;
+figure;imshow(data1,[]);title('data1');
+% data = depth_rand(depth,7,8);
 
 % % image=imread([path,name,'_rgb.png']);
 % [depth,image]=read_h5(path,name);

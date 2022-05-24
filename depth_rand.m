@@ -1,4 +1,4 @@
-function [data] = depth_rand(depth,rowInterval,colInterval)
+function [data] = depth_rand(depth,rowInterval,colInterval,showFigure)
 tic
 
 [row,col] = size(depth);
@@ -15,7 +15,6 @@ end
 
 data = mask.*double(depth);
 
-showFigure=0;
 if showFigure==1
     figure,imshow(depth,[]);title('depth');
     figure,imshow(mask),title('mask');

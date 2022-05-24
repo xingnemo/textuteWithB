@@ -1,4 +1,4 @@
-function [data] = edge_handle(depth,image)
+function [imageBW,depthBW,data] = handle_edge(depth,image,showFigure)
 tic
 
 % [depth,image]=read_h5(path,name);
@@ -7,12 +7,9 @@ imageBW = edge(image,'canny');
 depthBW = edge(depth,'canny');
 data = imabsdiff(imageBW,depthBW);
 
-showFigure=0;   %   是否显示图
 if showFigure==1
-    figure,imshow(image,[]);
-    figure,imshow(imageBW)
-    figure,imshow(depth,[]);
-    figure,imshow(depthBW)
+    figure;imshow(imageBW);title('imageBW');
+    figure;imshow(depthBW);title('depthBW');
     figure;imshow(data,[]);title('edge');
 end
 
