@@ -1,5 +1,5 @@
 function [data] = handle_contour_line(edge,radius,showFigure)
-tic
+
 
 temp=edge;
 result=edge; 

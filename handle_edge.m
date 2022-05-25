@@ -1,5 +1,4 @@
 function [imageBW,depthBW,data] = handle_edge(depth,image,showFigure)
-tic
 
 image=rgb2gray(image);
 imageBW = edge(image,'canny');
