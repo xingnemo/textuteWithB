@@ -174,10 +174,7 @@ for i = 1:row
 end
 
 %% ------ 调用 depth_rand 函数，从Ground Truth中抽样取点，自定义 sparse depth map------
-path = '.\data\';
-name = '00001';
-[depth,image]=read_h5(path,name);
-[mask,depthMask] = depth_rand(depth,5,5,0);   % 以上：获得了稀疏深度图 ---------
+[mask,depthMask] = depth_rand(originDepth,5,5,0);   % 以上：获得了稀疏深度图 ---------
 
 
 %% ------ 转变思路：选半径的方法 ------
